@@ -10,14 +10,6 @@
 <body onLoad="atualizaContador();" style="background-color:#000000">
     
     <script>
-            
-    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    if(!isChrome){
-        $('#iframeAudio').remove()
-    }
-    else{
-        $('#playAudio').remove()
-    }
 
     var YY = 2019;
     var MM = 11;
@@ -55,8 +47,14 @@
     setTimeout(atualizaContador,1000);  
     }
     }
-
-
+        
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if(!isChrome){
+        $('#iframeAudio').remove()
+    }
+    else{
+        $('#playAudio').remove()
+    }
 
 </script>
     
