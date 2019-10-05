@@ -6,56 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Férias</title>
 </head>
-<body onLoad="atualizaContador()" style="background-color:#000000">
-    
-        <script>
-       
-        var YY = 2019;
-        var MM = 11;
-        var DD = 01;
-        var HH = 11;
-        var MI = 59;
-        var SS = 59; 
-        
-        function atualizaContador() 
-        {  
-        var hoje = new Date();  
-        var futuro = new Date(YY,MM-1,DD,HH,MI,SS);
-
-        var ss = parseInt((futuro - hoje) / 1000);  
-        var mm = parseInt(ss / 60);  
-        var hh = parseInt(mm / 60);  
-        var dd = parseInt(hh / 24);   
-        ss = ss - (mm * 60);  
-        mm = mm - (hh * 60);  
-        hh = hh - (dd * 24);   
-        var faltam = '';  
-        faltam += (dd && dd > 1) ? dd+' dias, ' : (dd==1 ? '1 dia, ' : '');  
-        faltam += (toString(hh).length) ? hh+'h, ' : '';  
-        faltam += (toString(mm).length) ? mm+' min e ' : '';  
-        faltam += ss+' seg';   
-        
-        if (dd+hh+mm+ss > 0) 
-        {
-        document.getElementById('contador').innerHTML = faltam;	
-        setTimeout(atualizaContador,1000);  
-        }
-        else
-        {
-        document.getElementById('contador').innerHTML = 'CHEGOU!!!!';	
-        setTimeout(atualizaContador,1000);  
-        }
-        }
+<script>
             
-        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-        if(!isChrome){
-            $('#iframeAudio').remove()
-        }
-        else{
-            $('#playAudio').remove()
-        }
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if(!isChrome){
+        $('#iframeAudio').remove()
+    }
+    else{
+        $('#playAudio').remove()
+    }
 
-        </script>
+    var YY = 2019;
+    var MM = 11;
+    var DD = 01;
+    var HH = 11;
+    var MI = 59;
+    var SS = 59; 
+
+    function atualizaContador() 
+    {  
+    var hoje = new Date();  
+    var futuro = new Date(YY,MM-1,DD,HH,MI,SS);
+
+    var ss = parseInt((futuro - hoje) / 1000);  
+    var mm = parseInt(ss / 60);  
+    var hh = parseInt(mm / 60);  
+    var dd = parseInt(hh / 24);   
+    ss = ss - (mm * 60);  
+    mm = mm - (hh * 60);  
+    hh = hh - (dd * 24);   
+    var faltam = '';  
+    faltam += (dd && dd > 1) ? dd+' dias, ' : (dd==1 ? '1 dia, ' : '');  
+    faltam += (toString(hh).length) ? hh+'h, ' : '';  
+    faltam += (toString(mm).length) ? mm+' min e ' : '';  
+    faltam += ss+' seg';   
+
+    if (dd+hh+mm+ss > 0) 
+    {
+    document.getElementById('contador').innerHTML = faltam;	
+    setTimeout(atualizaContador,1000);  
+    }
+    else
+    {
+    document.getElementById('contador').innerHTML = 'CHEGOU!!!!';	
+    setTimeout(atualizaContador,1000);  
+    }
+    }
+
+
+
+</script>
+<body onLoad="atualizaContador()" style="background-color:#000000">
     
     <img src="img/header.png" alt="" style="display: block; margin-left: auto; margin-right: auto" height="300px">
 
