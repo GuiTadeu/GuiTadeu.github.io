@@ -55,6 +55,10 @@
     else{
         $('#playAudio').remove()
     }
+        
+    document.getElementById('playAudio').addEventListener('ended', function(){
+        this.currentTime = 0;
+    }, false);
 
 </script>
     
@@ -78,7 +82,7 @@
     <iframe src="music/funk_do_sax.mp3" allow="autoplay" style="display:none" id="iframeAudio">
     </iframe> 
 
-    <audio autoplay loop  id="playAudio">
+    <audio autoplay loop id="playAudio">
         <source src="music/funk_do_sax.mp3">
     </audio>
 
